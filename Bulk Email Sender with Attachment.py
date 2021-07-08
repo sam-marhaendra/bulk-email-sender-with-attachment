@@ -20,8 +20,6 @@ Thank you
 """)
 subject = "This is the subject of the email"
 fromaddr='abc@gmail.com'
-#body = "Subject: {}\n\n{}".format(subject,msg)
-#Emails,PDF
 for index, row in e.iterrows():
     print (row["EMAIL_COLUMN_NAME"]+row["ATTACHMENT_COLUMN_NAME"])
     msg = MIMEMultipart()
@@ -38,7 +36,6 @@ for index, row in e.iterrows():
     msg.attach(part)
     text = msg.as_string()
     server.sendmail(fromaddr, toaddr, text)
-    #server.sendmail('sender_email',emails,body)
 
 print("Emails sent successfully")
 
